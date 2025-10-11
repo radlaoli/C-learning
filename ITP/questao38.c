@@ -30,6 +30,6 @@ int main(){
     scanf("%d" , &qtdPessoas);
     float valorTotal = Custos(lista,qtdItens);
     float totalPorPessoa = valorTotal / qtdPessoas;
-    printf("Valor: R$ %.2f \n Divisão R$ %.2f para cada participante ", valorTotal, totalPorPessoa);
+    printf("Valor: R$ %.2f \nDivisão R$ %.2f para cada participante ", valorTotal, totalPorPessoa);
     return 0;
 }
