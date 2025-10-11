@@ -6,18 +6,29 @@ int main(){
     int j = 0;
     int palindromo = 1;
     scanf("%[^\n]", palavra);
-    for (int i= strlen(palavra)-1; i >= 0 ; i--)
+    
+    for (int i = strlen(palavra) - 1; i >= 0; i--)
     {
-        reverso[j] = palavra[i];
-        j++;
-    }
-    for ( int i = 0; i < strlen(palavra); i++)
-    {
-        if (palavra[i] != reverso[i])
-        {
-            palindromo = 0;
+        if (palavra[i] != ' ') {
+            reverso[j] = palavra[i];
+            j++;
         }
     }
+    reverso[j] = '\0';
+    
+    int k = 0;
+    for (int i = 0; i < strlen(palavra); i++)
+    {
+        if (palavra[i] != ' ') {
+            if (palavra[i] != reverso[k])
+            {
+                palindromo = 0;
+                break;
+            }
+            k++;
+        }
+    }
+    //
     if (palindromo)
     {
         printf("É palíndromo");
@@ -25,7 +36,5 @@ int main(){
     else{
         printf("Não é palíndromo");
     }
-    
-    
     return 0;
 }

@@ -12,6 +12,7 @@ int main() {
         }
         getchar();
         scanf("%[^\n]", p);
+        
         if (n == 0) {
             int i = 0;
             while (f[i] != '\0') {
@@ -25,25 +26,24 @@ int main() {
                 f[i] = p[i];
                 i++;
             }
-            f[i] = '\0';
+            int tam_f = i;
             
             i = 0;
             while (t[i] != '\0') {
-                f[strlen(f)] = t[i];
+                f[tam_f + i] = t[i];
                 i++;
             }
-            f[strlen(f)] = '\0';
+            f[tam_f + i] = '\0';
+            
         } else if (n == 1) {
-            if (strlen(f) > 0) {
-                f[strlen(f)] = ' ';
-                f[strlen(f) + 1] = '\0';
-            }
+            int tam_f = strlen(f);
+            
             int i = 0;
             while (p[i] != '\0') {
-                f[strlen(f)] = p[i];
+                f[tam_f + i] = p[i];
                 i++;
             }
-            f[strlen(f)] = '\0';
+            f[tam_f + i] = '\0';
         }
     }
     
